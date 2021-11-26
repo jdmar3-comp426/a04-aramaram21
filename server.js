@@ -26,12 +26,15 @@ app.get("/app/", (req, res, next) => {
 
 // READ a list of all users (HTTP method GET) at endpoint /app/users/
 app.get("/app/users", (req, res) => {	
-	const stmt = db.prepare("SELECT * FROM userinfo WHERE id = 2").all();
+	const stmt = db.prepare("SELECT * FROM userinfo").all();
 	res.status(200).json(stmt);
 });
 
 // READ a single user (HTTP method GET) at endpoint /app/user/:id
-
+app.get("/app/users", (req, res) => {	
+	const stmt = db.prepare("SELECT * FROM userinfo WHERE id = 2").all();
+	res.status(200).json(stmt);
+});
 // UPDATE a single user (HTTP method PATCH) at endpoint /app/update/user/:id
 
 // DELETE a single user (HTTP method DELETE) at endpoint /app/delete/user/:id
