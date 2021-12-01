@@ -26,7 +26,8 @@ app.get("/app/", (req, res, next) => {
 app.post("/app/new/user", (req, res) => {	
 	const stmt = db.prepare("INSERT INTO userinfo (user,pass) VALUES (?, ?)");
     const info = stmt.run('newtest','supersecurepassword');
-    console.log(info.changes);
+    //console.log(info.changes);
+    res.status(201).json({"message":"1 record created: ID 3 (201)"});
 
 	//res.status(200).json(stmt);
 });
