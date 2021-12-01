@@ -29,7 +29,7 @@ app.post("/app/new/", (req, res) => {
     res.status(201).json({"message":"1 record created: ID 3 (201)"});
 
     //console.log(info.changes);
-    //res.json({"id":req.params.id, "user":req.body.user, "pass":md5(req.body.pass});
+    res.json({"id":"3", "user":req.body.user, "pass":md5(req.body.pass});
 });
 // READ a list of all users (HTTP method GET) at endpoint /app/users/
 app.get("/app/users", (req, res) => {	
