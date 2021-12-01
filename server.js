@@ -51,6 +51,7 @@ app.patch("/app/update/user/:id", (req, res) => {
     const info = stmt.run(req.body.user,md5(req.body.pass),2);
     //console.log(info.changes);
     res.status(200).json({"message":"1 record updated: ID 2 (200)"});
+});
 // DELETE a single user (HTTP method DELETE) at endpoint /app/delete/user/:id
 app.delete("/app/delete/user/:id", (req, res) => {	
 	const stmt = db.prepare("DELETE FROM userinfo WHERE id = ?");
