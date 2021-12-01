@@ -29,6 +29,7 @@ app.post("/app/new/user", (req, res) => {
     //console.log(info.changes);
     res.status(201).json({"message":"1 record created: ID 3 (201)"});
 
+    console.log(info.lastInsertRowid);
 	//res.status(200).json(stmt);
 });
 // READ a list of all users (HTTP method GET) at endpoint /app/users/
