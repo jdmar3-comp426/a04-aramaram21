@@ -28,10 +28,6 @@ app.post("/app/new/", (req, res) => {
     const info = stmt.run(req.body.user,md5(req.body.pass));
     //console.log(info.changes);
     res.status(201).json({"message":"1 record created: ID 3 (201)"});
-    res.json({"id":3,"user":"newtest","pass":"38a7744f5523335db845ff1976bf4747"});
-    //console.log(info.changes);
-    //console.log(info.lastInsertRowid);
-	//res.status(200).json(stmt);
 });
 // READ a list of all users (HTTP method GET) at endpoint /app/users/
 app.get("/app/users", (req, res) => {	
