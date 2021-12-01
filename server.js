@@ -25,7 +25,7 @@ app.get("/app/", (req, res, next) => {
 // CREATE a new user (HTTP method POST) at endpoint /app/new/
 app.post("/app/new", (req, res) => {	
 	const stmt = db.prepare("INSERT INTO userinfo (user,pass) VALUES (?, ?)");
-    const info = stmt.run('newtest','supersecurepassword);
+    const info = stmt.run('newtest','supersecurepassword');
     console.log(info.changes);
 
 	//res.status(200).json(stmt);
