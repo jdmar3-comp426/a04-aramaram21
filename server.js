@@ -25,7 +25,7 @@ app.get("/app/", (req, res, next) => {
 // CREATE a new user (HTTP method POST) at endpoint /app/new/
 app.post("/app/new/", (req, res) => {	
 	const stmt = db.prepare("INSERT INTO userinfo (user, pass, id) VALUES (?, ?, ?)");
-    const info = stmt.run(req.body.user,md5(req.body.pass),req.params.id);
+    const info = stmt.run(req.body.user,md5(req.body.pass),3);
     res.status(201).json({"message":"1 record created: ID 3 (201)"});
 
     //console.log(info.changes);
